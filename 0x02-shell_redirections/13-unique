@@ -1,3 +1,2 @@
 #!/bin/bash
 sort -u listofwords.txt
-

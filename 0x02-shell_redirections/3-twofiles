@@ -1,3 +1,2 @@
 #!/bin/search
 cat /etc/password /etc/hosts
-
