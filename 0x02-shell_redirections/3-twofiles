@@ -1,2 +1,2 @@
-#!/bin/search
-cat /etc/password /etc/hosts
+#!/bin/bash
+cat /etc/passwd /etc/hosts
