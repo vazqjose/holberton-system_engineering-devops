@@ -1,2 +1,2 @@
 #!/bin/bash
-find -maxdepth 3 -empty '*.gif' "%f\n"
+find . -name '*.gif' -ls
