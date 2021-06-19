@@ -2,17 +2,16 @@
 # Bash script that gives information about the holbertonschool file
 
 FILE=holbertonschool
-if [ -a "$FILE" ]; then
+if [ -a $FILE ]; then
 	echo "$FILE file exists"
 
-	if [ -s "$FILE" ]
-	then
-		echo "$FILE is not empty"
+	if [ -s $FILE ]; then
+		echo "$FILE file is not empty"
 	else
-		echo "$FILE is empty"
+		echo "$FILE file is empty"
 	fi
 
-	if [ -f "$FILE" ]; then
+	if [ -f $FILE ]; then
 		echo "$FILE is a regular file"
 	fi
 
