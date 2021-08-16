@@ -1,7 +1,8 @@
 # Install a package
 
-$package = "puppet-lint"
+$package = 'puppet-lint'
 
 package { $package:
-  ensure   => 'installed',
+  ensure   => '1.1.0',
+  provider => 'gem',
 }
