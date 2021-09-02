@@ -3,4 +3,5 @@
 
 sudo apt-get update
 sudo apt-get install nginx -y
+echo 'Holberton School' | tee /var/www/html/index.html
 sudo service nginx restart
