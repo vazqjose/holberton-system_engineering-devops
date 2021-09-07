@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Install nginx on your web-01 server
+
+sudo apt-get update
+sudo apt-get install nginx -y
+sudo touch /var/www/html/index.html
+echo "Holberton School" | sudo tee "/var/www/html/index.html"
+command='rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;'
+sudo sed -i "42i\\\t$command" /etc/nginx/sites-available/default
+sudo service nginx restart
