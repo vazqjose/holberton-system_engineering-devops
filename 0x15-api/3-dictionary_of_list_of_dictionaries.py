@@ -10,24 +10,24 @@ if __name__ == "__main__":
     import csv
     import json
 
-    url = 'https://jsonplaceholder.typicode.com/todos?userId='
+    urlString = 'https://jsonplaceholder.typicode.com/todos?userId='
     todoList = {}
 
     users = requests.get('https://jsonplaceholder.typicode.com/users').json()
 
     for user in users:
-        user_id = user.get('id')
+        userID = user.get('id')
         username = user.get('username')
 
-        todos = requests.get(url + "{}".format(user_id)).json()
+        todos = requests.get(urlString + "{}".format(userID)).json()
 
-        tasks = []
+        tasksList = []
         for i in todos:
             task = {"username": username, "task": i.get("title"),
                     "completed": i.get("completed")}
-            tasks.append(task)
+            tasksList.append(task)
 
-        todoList[user_id] = tasks
+        todoList[userID] = tasksList
 
     with open('todo_all_employees.json', 'w') as f:
         json.dump(todoList, f)
