@@ -24,5 +24,5 @@ if __name__ == "__main__":
     with open("{}.csv".format(employeeID), 'w') as csvfile:
         for val in myTasks:
             csvfile.write(
-                    '"{}", "{}", "{}", "{}"\n'.format(
+                    '"{}","{}","{}","{}"\n'.format(
                         employeeID, name, val['completed'], val['title']))
