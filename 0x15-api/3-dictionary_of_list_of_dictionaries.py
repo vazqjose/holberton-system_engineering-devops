@@ -23,11 +23,12 @@ if __name__ == "__main__":
         tasksList = []
 
         for item in myData:
-            task = {"username": username, "task": item['title'],
-                    "completed": item['completed']}
-            tasksList.append(task)
-
-        todoList[userID] = tasksList
+            tasksList.append({
+                "username": username,
+                "task": item['title'],
+                "completed": item['completed']
+                })
+            todoList[userID] = tasksList
 
     with open('todo_all_employees.json', 'w') as outfile:
         json.dump(todoList, outfile)
