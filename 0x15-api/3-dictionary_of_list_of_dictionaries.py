@@ -29,5 +29,5 @@ if __name__ == "__main__":
 
         todoList[userID] = tasksList
 
-    with open('todo_all_employees.json', 'w') as f:
-        json.dump(todoList, f)
+    with open('todo_all_employees.json', 'w') as line:
+        json.dump(todoList, line)
