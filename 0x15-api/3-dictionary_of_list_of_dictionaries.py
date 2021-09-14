@@ -19,15 +19,15 @@ if __name__ == "__main__":
         userID = user['id']
         username = user['username']
 
-        todos = requests.get(urlString + "{}".format(userID)).json()
-
+        myData = requests.get(urlString + "{}".format(userID)).json()
         tasksList = []
-        for item in todos:
+
+        for item in myData:
             task = {"username": username, "task": item['title'],
                     "completed": item['completed']}
             tasksList.append(task)
 
         todoList[userID] = tasksList
 
-    with open('todo_all_employees.json', 'w') as line:
-        json.dump(todoList, line)
+    with open('todo_all_employees.json', 'w') as outfile:
+        json.dump(todoList, outfile)
