@@ -16,15 +16,15 @@ if __name__ == "__main__":
     users = requests.get('https://jsonplaceholder.typicode.com/users').json()
 
     for user in users:
-        userID = user.get('id')
-        username = user.get('username')
+        userID = user['id']
+        username = user['username']
 
         todos = requests.get(urlString + "{}".format(userID)).json()
 
         tasksList = []
-        for i in todos:
-            task = {"username": username, "task": i.get("title"),
-                    "completed": i.get("completed")}
+        for item in todos:
+            task = {"username": username, "task": item['title'],
+                    "completed": item['completed']}
             tasksList.append(task)
 
         todoList[userID] = tasksList
