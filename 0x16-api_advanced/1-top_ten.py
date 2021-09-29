@@ -24,4 +24,4 @@ def top_ten(subreddit):
             print(line)
 
     else:
-        print ('None')
+        print('None')
