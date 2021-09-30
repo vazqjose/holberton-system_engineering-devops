@@ -17,10 +17,13 @@ def top_ten(subreddit):
     response = requests.get(url, allow_redirects=False, headers=headers)
 
     if response.status_code == 200:
-
+        count = 10
         for post in response.json().get('data').get('children'):
             line = post.get('data').get('title')
             print(line)
+            count = count - 1
+            if count == 0:
+                break
 
     else:
         print('None')
