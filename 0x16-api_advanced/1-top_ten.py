@@ -11,7 +11,7 @@ import requests
 
 def top_ten(subreddit):
 
-    url = 'https://www.reddit.com/r/' + subreddit + '/.json?limit=10'.format(subreddit)
+    url = 'https://www.reddit.com/r/' + subreddit + '/.json?limit=10'
     headers = {'user-agent': 'my-app/0.0.1'}
     response = requests.get(url, headers=headers)
 
