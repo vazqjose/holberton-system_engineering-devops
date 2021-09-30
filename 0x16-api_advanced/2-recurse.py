@@ -23,16 +23,20 @@ def recurse(subreddit, hot_list=[]):
     }
 
     response = requests.get(url, headers=headers, params=parameters,
-                            allow_redirects=False)
+            allow_redirects=False)
 
-    results = response.json().get('data')
-    after = results.get('after')
-    count += results.get('dist')
+    if response.status_code == 200:
+        results = response.json().get('data')
+        after = results.get('after')
+        count += results.get('dist')
 
-    for line in results.get('children'):
-        hot_list.append(line.get('data').get('title'))
+        for line in results.get('children'):
+            hot_list.append(line.get('data').get('title'))
 
-    if after is not None:
-        return recurse(subreddit, hot_list, after, count)
+        if after is not None:
+            return recurse(subreddit, hot_list, after, count)
 
-    return hot_list
+        return hot_list
+
+    else:
+        return None
