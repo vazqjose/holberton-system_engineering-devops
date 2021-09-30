@@ -11,7 +11,7 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[]):
+def recurse(subreddit, hot_list=[], after="", count=0):
 
     url = 'https://www.reddit.com/r/' + subreddit + '/hot/.json'
     headers = {'user-agent': 'my-app/0.0.1'}
